@@ -1,0 +1,24 @@
+image:
+  repository: atlasapiacr.azurecr.io/fastapi
+  tag: latest
+  pullPolicy: IfNotPresent
+
+replicaCount: 3
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 256Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+ingress:
+  enabled: true
+
+autoscaling:
+  enabled: true
