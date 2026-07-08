@@ -44,3 +44,14 @@ Selector labels
 app.kubernetes.io/name: {{ include "fastapi.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
+
+{{/*
+Service account name
+*/}}
+{{- define "fastapi.serviceAccountName" -}}
+{{- if .Values.serviceAccount.create }}
+{{- default (include "fastapi.fullname" .) .Values.serviceAccount.name }}
+{{- else }}
+{{- default "default" .Values.serviceAccount.name }}
+{{- end }}
+{{- end }}

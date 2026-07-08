@@ -16,6 +16,10 @@ resources:
   limits:
     cpu: 500m
     memory: 512Mi
+  
+serviceAccount:
+  create: true
+  name: "fastapi-service-account"
 
 ingress:
   enabled: true
