@@ -22,7 +22,13 @@ serviceAccount:
   name: "fastapi-service-account"
 
 ingress:
-  enabled: true
+  enabled: false
+  # className: "nginx"
+  # hosts:
+  #   - host: atlasapi.example.com
+  #     paths:
+  #       - path: /
+  #         pathType: Prefix
 
 autoscaling:
   enabled: true
